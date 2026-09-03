@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planet Car — Centro Automotivo em São Carlos | Preço fechado, sem surpresa</title>
+<meta name="description" content="Pneu, óleo, alinhamento a laser, suspensão e freios em São Carlos e Ibaté. Você aprova o orçamento antes e a peça velha volta pra você. Peça no WhatsApp.">
+<link rel="canonical" href="https://planet-car.brands.lidzap.com/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Planet Car — Centro Automotivo em São Carlos">
+<meta property="og:description" content="Preço fechado, peça velha devolvida, alinhamento a laser incluso. Peça seu orçamento no WhatsApp.">
+<meta property="og:url" content="https://planet-car.brands.lidzap.com/">
+<meta property="og:image" content="https://planet-car.brands.lidzap.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon-48.png" sizes="48x48"><link rel="apple-touch-icon" href="/assets/logo-192.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Planet Car Centro Automotivo",
+"image":"https://planet-car.brands.lidzap.com/assets/og.png",
+"address":{"@type":"PostalAddress","streetAddress":"Av. João Orlando Ruggiero, 45 - Jardim Embaré","addressLocality":"São Carlos","addressRegion":"SP","postalCode":"13563-840","addressCountry":"BR"},
+"telephone":"+5516997904363","areaServed":["São Carlos","Ibaté"],
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}]}
+</script>
+<!-- RASCUNHO DO PILOTO — logo real embutido (data-URI; no repo vira /assets/). Snippet do GTM
+     + script de Consent Mode entram na etapa do Eric, aqui no <head>
+     (standards/tracking-conversions.md §6/§7). -->
+<style>
+  :root{
+    --vermelho:#e1251b;
+    --vermelho-esc:#b91d15;
+    --preto:#0e0e0e;
+    --preto-2:#191919;
+    --tinta:#161616;
+    --cinza:#5c5c5c;
+    --linha:#e6e6e6;
+    --fundo:#ffffff;
+    --fundo-2:#f6f6f4;
+    --preco:#f2c200; /* amarelo — só em número de preço, acento secundário */
+    --raio:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--tinta);background:var(--fundo);line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.15}
+  h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;letter-spacing:-.015em}
+  h2{font-size:clamp(1.4rem,3.6vw,2.1rem);font-weight:800;margin-bottom:.6em;letter-spacing:-.01em}
+  h3{font-size:1.05rem;font-weight:700}
+  p{margin-bottom:.8em}
+  section{padding:clamp(2.4rem,6vw,4rem) 0}
+  .alt{background:var(--fundo-2)}
+  .dark{background:var(--preto);color:#fff}
+  .dark h2{color:#fff}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:800;font-size:1rem;
+    padding:.9em 1.45em;border-radius:999px;text-decoration:none;border:2px solid transparent;
+    transition:transform .12s ease,box-shadow .12s ease,background .12s ease;cursor:pointer}
+  .btn svg{width:1.2em;height:1.2em;flex:none}
+  .btn-primary{background:var(--vermelho);color:#fff}
+  .btn-primary:hover,.btn-primary:active{background:var(--vermelho-esc);transform:translateY(-1px);
+    box-shadow:0 10px 26px rgba(225,37,27,.4)}
+  .btn-primary:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .dark .btn-primary:focus-visible{outline-color:var(--vermelho)}
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(14,14,14,.97);
+    backdrop-filter:blur(6px);border-bottom:2px solid var(--vermelho)}
+  .nav .wrap{display:flex;align-items:center;gap:1.2rem;min-height:66px}
+  .nav .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .nav .logo img{height:42px;width:auto}
+  .nav .logo b{color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:.4px;text-transform:uppercase}
+  .nav .logo b span{color:var(--vermelho)}
+  .nav nav{margin-left:auto;display:flex;gap:1.4rem}
+  .nav nav a{text-decoration:none;color:#cfcfcf;font-weight:600;font-size:.95rem}
+  .nav nav a:hover{color:#fff}
+  .nav .btn{padding:.55em 1.05em;font-size:.9rem}
+  @media(max-width:900px){.nav nav{display:none}.nav .logo b{display:none}.nav .btn.menu-cta{margin-left:auto}}
+  .hero{background:var(--preto);color:#fff;border-bottom:2px solid var(--vermelho);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;
+    border:60px solid rgba(225,37,27,.14);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-logo{height:76px;width:auto;margin-bottom:1.3rem}
+  .hero h1{color:#fff;max-width:16ch}
+  .hero h1 b{color:var(--vermelho);font-weight:800}
+  .hero p.sub{font-size:1.12rem;color:#d2d2d2;max-width:40em;margin-top:.9rem}
+  .hero .cta-row{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+  .hero .micro{font-size:.9rem;color:#a9a9a9;margin-top:.7rem}
+  .selos{display:flex;flex-wrap:wrap;gap:.7rem 1.4rem;margin-top:2rem;font-size:.9rem;color:#cfcfcf}
+  .selos span{display:inline-flex;align-items:center;gap:.4rem}
+  .selos span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--vermelho)}
+  .selos b{color:#fff}
+  .avaliacoes-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin-bottom:1rem}
+  .avaliacoes-head .nota{font-size:1.6rem;font-weight:800}
+  .avaliacoes-head .stars{color:var(--preco);letter-spacing:2px}
+  .avaliacoes-head .g{color:var(--cinza);font-size:.92rem}
+  .avaliacoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+  .card{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:1.2rem}
+  .card .stars{color:var(--preco);letter-spacing:2px;font-size:.95rem}
+  .card p{font-size:.97rem;margin:.5rem 0 .4rem}
+  .card .quem{font-weight:700;font-size:.9rem}
+  .servicos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+  .serv{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:1.3rem}
+  .serv h3{margin-bottom:.3rem}
+  .serv p{font-size:.93rem;color:var(--cinza);margin:0}
+  .serv .ico{width:36px;height:36px;border-radius:9px;background:var(--preto);
+    display:flex;align-items:center;justify-content:center;margin-bottom:.7rem}
+  .serv .ico svg{width:20px;height:20px;color:var(--vermelho)}
+  .precos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+  .preco-card{background:var(--preto-2);border:1px solid #2a2a2a;border-radius:var(--raio);overflow:hidden}
+  .preco-card h3{background:var(--vermelho);color:#fff;padding:.8rem 1.1rem;font-size:1.05rem;text-transform:uppercase;letter-spacing:.3px}
+  .preco-card table{width:100%;border-collapse:collapse}
+  .preco-card td{padding:.7rem 1.1rem;border-top:1px solid #2a2a2a;font-size:.98rem;color:#e6e6e6}
+  .preco-card td:last-child{text-align:right;color:var(--preco);font-weight:800;white-space:nowrap}
+  .preco-card tr:first-child td{border-top:none}
+  .preco-card .obs{padding:.7rem 1.1rem;font-size:.82rem;color:#a9a9a9}
+  .precos-nota{margin-top:1.1rem;font-size:.9rem;color:#cfcfcf}
+  @media(max-width:760px){.precos-grid{grid-template-columns:1fr}}
+  .passos{counter-reset:p;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+  .passo::before{counter-increment:p;content:counter(p);display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;background:var(--vermelho);color:#fff;font-weight:800;margin-bottom:.6rem}
+  .passo h3{margin-bottom:.3rem}
+  .passo p{font-size:.93rem;color:var(--cinza);margin:0}
+  .benef{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem}
+  .benef li{display:flex;gap:.7rem;align-items:flex-start;background:#fff;border:1px solid var(--linha);border-radius:12px;padding:1rem}
+  .benef svg{width:20px;height:20px;color:var(--vermelho);flex:none;margin-top:2px}
+  .faq details{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:0 1.1rem;margin-bottom:.7rem}
+  .faq summary{padding:1rem 0;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:1.3rem;color:var(--vermelho);line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{padding-bottom:1rem;margin:0;color:var(--cinza);font-size:.96rem}
+  .local{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:center}
+  .mapa{background:var(--fundo-2);border:1px dashed var(--linha);border-radius:var(--raio);aspect-ratio:16/10;
+    display:flex;align-items:center;justify-content:center;color:var(--cinza);font-size:.9rem}
+  @media(max-width:900px){.local{grid-template-columns:1fr}}
+  .cta-final{text-align:center;border-top:2px solid var(--vermelho)}
+  .cta-final p{color:#d2d2d2;max-width:32em;margin:0 auto 1.4rem}
+  footer{background:#0a0a0a;color:#9a9a9a;font-size:.86rem;padding:2rem 0 5.5rem}
+  footer a{color:#d2d2d2}
+  footer .fwrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+  footer .links{display:flex;gap:1rem;flex-wrap:wrap}
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--preto);border-top:2px solid var(--vermelho);padding:.7rem 16px;display:none}
+  .sticky .btn{width:100%;justify-content:center}
+  @media(max-width:900px){.sticky{display:block}}
+  #cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;background:#fff;border:1px solid var(--linha);
+    border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.22);padding:1rem 1.1rem;display:none;gap:.7rem;align-items:center;flex-wrap:wrap;font-size:.9rem}
+  #cookie p{margin:0;flex:1 1 240px;color:var(--cinza)}
+  #cookie button{font:inherit;font-weight:700;border-radius:999px;padding:.5em 1.1em;cursor:pointer;border:2px solid var(--linha);background:#fff;color:var(--tinta)}
+  #cookie button.ok{background:var(--vermelho);border-color:var(--vermelho);color:#fff}
+  @media(max-width:900px){#cookie{bottom:76px}}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <img src="/assets/logo-96.webp" alt="Planet Car Centro Automotivo" width="42" height="42" fetchpriority="high">
+      <b>Planet<span>Car</span></b>
+    </a>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Preços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#localizacao">Onde estamos</a>
+    </nav>
+    <a class="btn btn-primary menu-cta" data-cta href="#" aria-label="Pedir orçamento no WhatsApp">Orçamento no WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="/assets/logo-192.webp" alt="" aria-hidden="true" width="76" height="76" fetchpriority="high">
+    <h1>Seu carro resolvido em São Carlos, com <b>preço fechado</b> e sem surpresa na nota.</h1>
+    <p class="sub">Pneu, óleo, alinhamento a laser, suspensão, freios e revisão. Você aprova o orçamento antes, a peça velha volta pra você, e dá pra acompanhar o serviço — presencial ou por vídeo.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" data-cta href="#" aria-label="Pedir orçamento no WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.9 5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.6-.1 1.3Z"/></svg>
+        Pedir orçamento no WhatsApp
+      </a>
+    </div>
+    <p class="micro">Manda o modelo do carro e o que está sentindo. Sem compromisso.</p>
+    <div class="selos">
+      <span class="y"><b>São Carlos e Ibaté</b></span>
+      <span>Você <b>aprova antes</b></span>
+      <span>Peça velha <b>devolvida</b></span>
+      <span>Alinhamento a <b>laser</b> incluso</span>
+      <span>Até <b>10x/12x</b> no cartão</span>
+    </div>
+  </div>
+</section>
+
+<section id="avaliacoes">
+  <div class="wrap">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="avaliacoes-head">
+      <span class="nota">Avaliações no Google</span>
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="g">nota e nº de avaliações — a puxar do perfil do Google</span>
+    </div>
+    <div class="avaliacoes">
+      <div class="card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Encontrei tudo o que precisava em um só lugar!"</p><div class="quem">Pedro Oliveira</div></div>
+      <div class="card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Resolveram meu problema na hora e com preço justo."</p><div class="quem">Fernanda Silva</div></div>
+      <div class="card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Atendimento profissional, técnicos que sabem o que fazem."</p><div class="quem">João Miguel</div></div>
+    </div>
+    <p class="micro" style="color:var(--cinza);margin-top:1rem">Depoimentos de clientes Planet Car. Substituir por avaliações reais do Google.</p>
+  </div>
+</section>
+
+<section id="servicos" class="alt">
+  <div class="wrap">
+    <h2>O que a gente resolve</h2>
+    <div class="servicos">
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Pneu</h3><p>Troca e montagem com alinhamento e balanceamento a laser inclusos.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13h14l-1.5 6h-11z"/><path d="M8 13V7a4 4 0 0 1 8 0v6"/></svg></div><h3>Troca de óleo e filtros</h3><p>Óleo + filtro + mão de obra inclusos. Sem taxa escondida.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/><path d="M12 3v18"/></svg></div><h3>Alinhamento e balanceamento a laser</h3><p>Precisão de concessionária. Direção reta e pneu durando mais.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V9m16 8V9M4 13h16"/></svg></div><h3>Suspensão e amortecedor</h3><p>Fim do barulho no buraco. Diagnóstico antes do orçamento.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></svg></div><h3>Freios</h3><p>Pastilha, disco e fluido conferidos item a item.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16v8H4z"/><path d="M8 12h8"/></svg></div><h3>Ar-condicionado</h3><p>Higienização e recarga de gás. Volta a gelar de verdade.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M6 9h12M6 15h12"/></svg></div><h3>Correia dentada e embreagem</h3><p>Serviço que não pode falhar, com peça certa e prazo combinado.</p></div>
+      <div class="serv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/></svg></div><h3>Revisão geral / check-up</h3><p>Confere o carro inteiro e mostra o que é urgente e o que pode esperar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="precos" class="dark">
+  <div class="wrap">
+    <h2>Nossos preços</h2>
+    <div class="precos-grid">
+      <div class="preco-card">
+        <h3>Pneus &mdash; a laser incluso</h3>
+        <table>
+          <tr><td>Aro 13</td><td>a partir de R$ 199</td></tr>
+          <tr><td>Aro 14</td><td>a partir de R$ 209</td></tr>
+          <tr><td>Aro 15</td><td>a partir de R$ 229</td></tr>
+        </table>
+        <div class="obs">Alinhamento e balanceamento a laser inclusos. Parcelamento em até 12x no cartão. (Tabela a confirmar com o cliente.)</div>
+      </div>
+      <div class="preco-card">
+        <h3>Troca de óleo &mdash; filtro incluso</h3>
+        <table>
+          <tr><td>20W50 (até 4L)</td><td>a partir de R$ 89,90</td></tr>
+          <tr><td>15W40</td><td>a partir de R$ 169,90</td></tr>
+          <tr><td>5W30 sintético</td><td>a partir de R$ 189,90</td></tr>
+        </table>
+        <div class="obs">Filtro e mão de obra inclusos no preço. Sem surpresa na nota.</div>
+      </div>
+    </div>
+    <p class="precos-nota">O valor final confirma no WhatsApp conforme o seu carro. Parcelamos em até 10x/12x no cartão.</p>
+    <div style="margin-top:1.4rem"><a class="btn btn-primary" data-cta href="#">Ver meu preço no WhatsApp</a></div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <h2>Como funciona</h2>
+    <div class="passos">
+      <div class="passo"><h3>Você chama no WhatsApp</h3><p>Manda o modelo do carro e o que está sentindo. Já adiantamos uma ideia e agendamos.</p></div>
+      <div class="passo"><h3>Diagnóstico e orçamento fechado</h3><p>Olhamos o carro e passamos o preço com peça e mão de obra inclusos, sem taxa escondida.</p></div>
+      <div class="passo"><h3>Você aprova</h3><p>Nada é trocado sem a sua autorização. Dá pra acompanhar presencial ou por vídeo.</p></div>
+      <div class="passo"><h3>Serviço feito e peça devolvida</h3><p>No prazo combinado, com garantia por escrito e a peça velha de volta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Por que a Planet Car</h2>
+    <ul class="benef">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Preço fechado e dito antes.</b> O que está na conversa é o que sai na nota.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Peça velha sempre devolvida.</b> Você vê o que foi trocado.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Alinhamento e balanceamento a laser.</b> Incluso na troca de pneu.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Acompanhe o serviço</b> presencialmente ou por vídeo.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Garantia documentada</b> em todo serviço.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Parcela em até 10x/12x</b> no cartão.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap" style="max-width:44em">
+    <h2>Sobre a Planet Car</h2>
+    <p>Centro automotivo no Jardim Embaré, em São Carlos. A ideia é simples: consertar carro sem enrolação. Você aprova cada serviço antes, recebe a peça velha de volta e sabe quanto vai pagar desde o começo.</p>
+    <p>Atendemos São Carlos e Ibaté, com serviço para carros de passeio e utilitários.</p>
+  </div>
+</section>
+
+<section id="localizacao" class="alt">
+  <div class="wrap">
+    <h2>Onde estamos</h2>
+    <div class="local">
+      <div>
+        <p><b>Planet Car Centro Automotivo</b><br>
+        Av. João Orlando Ruggiero, 45 &mdash; Jardim Embaré<br>
+        São Carlos - SP, 13563-840</p>
+        <p><b>Horário:</b> Segunda a sexta, 8h às 18h &middot; Sábado, 8h ao meio-dia</p>
+        <a class="btn btn-primary" data-cta href="#">Chamar no WhatsApp</a>
+      </div>
+      <div class="mapa">[ mapa do Google incorporado ]</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:44em">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Vão trocar peça sem me avisar?</summary><p>Não. Nada é trocado sem a sua aprovação, e a peça velha volta pra você.</p></details>
+      <details><summary>O preço do anúncio é o real?</summary><p>É o preço fechado: peça + mão de obra inclusos, sem taxa escondida. O valor final confirma no WhatsApp conforme o carro.</p></details>
+      <details><summary>Quanto tempo demora?</summary><p>Depende do serviço &mdash; a gente te passa o prazo junto com o orçamento.</p></details>
+      <details><summary>Tem garantia?</summary><p>Sim, garantia documentada em todo serviço.</p></details>
+      <details><summary>Dá pra parcelar?</summary><p>Sim, em até 10x/12x no cartão.</p></details>
+      <details><summary>Atende meu carro?</summary><p>Carros de passeio e utilitários. Manda o modelo no WhatsApp que a gente confirma.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final dark">
+  <div class="wrap">
+    <h2>Pega o preço fechado do seu serviço agora</h2>
+    <p>Manda o modelo do carro e o que está sentindo. A gente te passa um pré-orçamento e agenda.</p>
+    <a class="btn btn-primary" data-cta href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.9 5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.6-.1 1.3Z"/></svg>
+      Pedir orçamento no WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fwrap">
+    <div>
+      PLANETCAR CENTRO AUTOMOTIVO LTDA &middot; CNPJ 55.210.091/0001-81<br>
+      Av. João Orlando Ruggiero, 45, Jardim Embaré, São Carlos - SP.<br>
+      Contato do titular de dados: WhatsApp (16) 99790-4363.
+      &copy; <span id="ano"></span> Planet Car. Todos os direitos reservados.
+    </div>
+    <div class="links">
+      <a href="/privacy.html">Política de Privacidade</a>
+      <a href="/terms.html">Termos de Uso</a>
+      <a href="#" id="cookie-reabrir">Preferências de cookie</a>
+      <a href="https://www.lidzap.com/?utm_source=brandslp&utm_medium=referral&utm_campaign=68-planet-car-brands-lidzap-com" rel="noopener">Desenvolvido por Lidzap</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-primary" data-cta href="#">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.9 5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2c.1.2.1.4 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.6-.1 1.3Z"/></svg>
+    Pedir orçamento no WhatsApp
+  </a>
+</div>
+
+<div id="cookie" role="dialog" aria-label="Aviso de cookies">
+  <p>A gente usa cookies pra medir o site e melhorar seus anúncios. Você pode aceitar, recusar ou escolher.</p>
+  <button class="ok" data-consent="all">Aceitar</button>
+  <button data-consent="none">Recusar</button>
+  <button data-consent="manage">Gerenciar</button>
+</div>
+
+<script>
+  // RASCUNHO — script de Consent Mode + snippet do GTM entram na etapa do Eric
+  // (standards/tracking-conversions.md §6/§7). Aqui só UX + dataLayer.
+  window.dataLayer = window.dataLayer || [];
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  dataLayer.push({event:'page_view', page_type:'home'});
+
+  var WA = 'https://wa.me/5516997904363?text=' + encodeURIComponent(
+    'Olá! Vim pela página da Planet Car. Meu carro é __ e estou sentindo __. Consigo um orçamento?');
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    a.setAttribute('href', WA);
+    a.addEventListener('click', function(){
+      var sec = a.closest('section'); var loc = sec ? (sec.id || 'secao') : (a.closest('header') ? 'menu' : 'sticky');
+      dataLayer.push({event:'cta_click', cta_type:'whatsapp', cta_location:loc, cta_text:a.textContent.trim()});
+      dataLayer.push({event:'whatsapp', cta_location:loc});
+    });
+  });
+
+  var ck = document.getElementById('cookie');
+  try{ if(!localStorage.getItem('consent')) ck.style.display='flex'; }catch(e){ ck.style.display='flex'; }
+  ck.querySelectorAll('[data-consent]').forEach(function(b){
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('consent', b.dataset.consent); }catch(e){}
+      ck.style.display='none'; // Eric: gtag('consent','update',{...})
+    });
+  });
+  document.getElementById('cookie-reabrir').addEventListener('click', function(e){ e.preventDefault(); ck.style.display='flex'; });
+
+  var s50=false,s90=false;
+  addEventListener('scroll', function(){
+    var p=(scrollY+innerHeight)/document.body.scrollHeight*100;
+    if(!s50&&p>=50){s50=true;dataLayer.push({event:'scroll_50'});}
+    if(!s90&&p>=90){s90=true;dataLayer.push({event:'scroll_90'});}
+  }, {passive:true});
+</script>
+</body>
+</html>

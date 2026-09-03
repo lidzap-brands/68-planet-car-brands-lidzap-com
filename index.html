@@ -24,6 +24,26 @@
 {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},
 {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}]}
 </script>
+<script>
+  // Consent Mode v2 — default opt-out (as 4 chaves nascem granted; so vira denied se o
+  // visitante ja recusou antes). Ver standards/tracking-conversions.md §6.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var v = 'all';
+    try{ v = localStorage.getItem('pc_consent') || 'all'; }catch(e){}
+    var ana = (v !== 'none') ? 'granted' : 'denied';           // analitico
+    var mkt = (v === 'all') ? 'granted' : 'denied';            // marketing / ads
+    gtag('consent','default',{
+      analytics_storage: ana,
+      ad_storage: mkt, ad_user_data: mkt, ad_personalization: mkt,
+      functionality_storage:'granted', security_storage:'granted', wait_for_update:500
+    });
+  })();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K3RZCJBD');</script>
+<!-- End Google Tag Manager -->
 <style>
   :root{
     --vermelho:#e1251b;--vermelho-esc:#b91d15;--preto:#0e0e0e;--preto-2:#191919;
@@ -133,6 +153,7 @@
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3RZCJBD" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe></noscript>
 
 <header class="nav">
   <div class="wrap">
@@ -331,9 +352,15 @@
 
 <div id="cookie" role="dialog" aria-label="Aviso de cookies">
   <p>A gente usa cookies para medir o site e melhorar os anúncios. Você pode aceitar, recusar ou escolher.</p>
-  <button class="ok" data-consent="all">Aceitar</button>
-  <button data-consent="none">Recusar</button>
-  <button data-consent="manage">Gerenciar</button>
+  <button class="ok" id="ck-all">Aceitar</button>
+  <button id="ck-none">Recusar</button>
+  <button id="ck-manage">Gerenciar</button>
+  <div id="ck-panel" hidden style="flex-basis:100%;border-top:1px solid var(--linha);margin-top:.4rem;padding-top:.7rem">
+    <label style="display:block;margin:.3rem 0"><input type="checkbox" checked disabled> Necessários (sempre ativos)</label>
+    <label style="display:block;margin:.3rem 0"><input type="checkbox" id="ck-ana" checked> Analíticos</label>
+    <label style="display:block;margin:.3rem 0"><input type="checkbox" id="ck-mkt" checked> Marketing</label>
+    <button class="ok" id="ck-save" style="margin-top:.4rem">Salvar escolha</button>
+  </div>
 </div>
 
 <script>
@@ -353,12 +380,27 @@
   });
 
   var ck = document.getElementById('cookie');
-  try{ if(!localStorage.getItem('consent')) ck.style.display='flex'; }catch(e){ ck.style.display='flex'; }
-  ck.querySelectorAll('[data-consent]').forEach(function(b){
-    b.addEventListener('click', function(){
-      try{ localStorage.setItem('consent', b.dataset.consent); }catch(e){}
-      ck.style.display='none';
+  function stored(){ try{ return localStorage.getItem('pc_consent'); }catch(e){ return null; } }
+  if(!stored()) ck.style.display='flex';
+  function apply(v){
+    try{ localStorage.setItem('pc_consent', v); }catch(e){}
+    var ana = (v !== 'none') ? 'granted' : 'denied';
+    var mkt = (v === 'all') ? 'granted' : 'denied';
+    gtag('consent','update',{
+      analytics_storage: ana,
+      ad_storage: mkt, ad_user_data: mkt, ad_personalization: mkt
     });
+    ck.style.display='none';
+    document.getElementById('ck-panel').hidden = true;
+  }
+  document.getElementById('ck-all').addEventListener('click', function(){ apply('all'); });
+  document.getElementById('ck-none').addEventListener('click', function(){ apply('none'); });
+  document.getElementById('ck-manage').addEventListener('click', function(){
+    var p = document.getElementById('ck-panel'); p.hidden = !p.hidden;
+  });
+  document.getElementById('ck-save').addEventListener('click', function(){
+    var a = document.getElementById('ck-ana').checked, m = document.getElementById('ck-mkt').checked;
+    apply(a && m ? 'all' : (a ? 'ad' : 'none'));
   });
   document.getElementById('cookie-reabrir').addEventListener('click', function(e){ e.preventDefault(); ck.style.display='flex'; });
 
